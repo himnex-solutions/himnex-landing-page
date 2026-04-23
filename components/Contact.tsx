@@ -13,23 +13,7 @@ import {
   Briefcase,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const projectTypes = [
-  "Web Development",
-  "Mobile App",
-  "Custom Software",
-  "API / Backend",
-  "Consultation",
-  "Other",
-];
-
-const budgetRanges = [
-  "< $5K",
-  "$5K – $15K",
-  "$15K – $50K",
-  "$50K+",
-  "Let's discuss",
-];
+import { budgetRanges, projectTypes } from "@/lib/contact-options";
 
 const contactMeta = [
   {
@@ -60,6 +44,7 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -76,11 +61,39 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (loading) return;
+
     setLoading(true);
-    // Simulate async submit (replace with actual API call)
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const result = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+
+      if (!response.ok) {
+        throw new Error(
+          result?.error || "We could not send your message. Please try again."
+        );
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "We could not send your message. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -226,6 +239,7 @@ export default function Contact() {
                   <Button
                     onClick={() => {
                       setSubmitted(false);
+                      setSubmitError("");
                       setFormData({
                         name: "",
                         email: "",
@@ -373,6 +387,15 @@ export default function Contact() {
                   </div>
 
                   {/* Submit */}
+                  {submitError ? (
+                    <p
+                      role="alert"
+                      className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700"
+                    >
+                      {submitError}
+                    </p>
+                  ) : null}
+
                   <Button
                     type="submit"
                     disabled={loading}
