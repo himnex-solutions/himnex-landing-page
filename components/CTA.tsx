@@ -57,7 +57,7 @@ export default function CTA() {
             <Button
               asChild
               size="lg"
-              className="bg-[#FF6A00] hover:bg-[#ff8533] text-[#111827] font-bold text-base px-8 h-13 gap-2 transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_20px_42px_rgba(255,106,0,0.28)]"
+              className="bg-[#FF6A00] hover:bg-[#ff8533] text-[#fff] font-bold text-base px-8 h-13 gap-2 transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_20px_42px_rgba(255,106,0,0.28)]"
             >
               <Link href="/contact" id="cta-start-project-btn">
                 Start a Project

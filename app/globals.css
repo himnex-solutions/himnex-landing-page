@@ -136,3 +136,18 @@
 .section-divider {
   background: linear-gradient(90deg, transparent, rgba(255, 106, 0, 0.24), transparent);
 }
+
+@keyframes global-reach-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-33.333333%, 0, 0);
+  }
+}
+
+.global-reach-marquee {
+  animation: global-reach-marquee 22s linear infinite;
+  animation-play-state: running;
+  will-change: transform;
+}
