@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Link from "next/link";
 import {
   ArrowRight,
   Calendar,
@@ -98,10 +99,10 @@ export default function Hero() {
               size="lg"
               className="h-12 rounded-lg bg-brand-orange px-6 text-base font-bold text-white shadow-[0_18px_40px_rgba(255,106,0,0.28)] transition-all duration-200 hover:scale-[1.02] hover:bg-[#ff8533]"
             >
-              <a href="#contact" id="hero-get-quote-btn">
+              <Link href="/contact" id="hero-get-quote-btn">
                 Start a Project
                 <ArrowRight size={18} />
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
@@ -109,10 +110,10 @@ export default function Hero() {
               variant="outline"
               className="h-12 rounded-lg border-[#D0D5DD] bg-white px-6 text-base font-semibold text-[#111827] shadow-[0_12px_30px_rgba(15,23,42,0.07)] hover:bg-[#F7F9FC]"
             >
-              <a href="#contact" id="hero-book-call-btn">
+              <Link href="/contact" id="hero-book-call-btn">
                 <Calendar size={17} />
                 Book Strategy Call
-              </a>
+              </Link>
             </Button>
           </motion.div>
 

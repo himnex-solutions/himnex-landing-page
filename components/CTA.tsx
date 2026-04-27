@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -58,10 +59,10 @@ export default function CTA() {
               size="lg"
               className="bg-[#FF6A00] hover:bg-[#ff8533] text-[#111827] font-bold text-base px-8 h-13 gap-2 transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_20px_42px_rgba(255,106,0,0.28)]"
             >
-              <a href="#contact" id="cta-start-project-btn">
+              <Link href="/contact" id="cta-start-project-btn">
                 Start a Project
                 <ArrowRight size={18} />
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
@@ -69,9 +70,9 @@ export default function CTA() {
               variant="outline"
               className="border-[#D0D5DD] bg-white hover:bg-[#F7F9FC] text-[#111827] font-semibold text-base px-8 h-13 shadow-[0_10px_24px_rgba(15,23,42,0.06)]"
             >
-              <a href="#contact" id="cta-book-call-btn">
+              <Link href="/contact" id="cta-book-call-btn">
                 Schedule a Free Call
-              </a>
+              </Link>
             </Button>
           </div>
 

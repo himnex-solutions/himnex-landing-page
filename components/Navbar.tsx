@@ -2,16 +2,17 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#portfolio" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Reviews", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "Work", href: "/portfolio" },
+  { label: "Why Us", href: "/why-us" },
+  { label: "Reviews", href: "/testimonials" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -37,8 +38,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="flex items-center transition-opacity duration-200 hover:opacity-85"
             aria-label="Himnex Solutions home"
           >
@@ -51,19 +52,19 @@ export default function Navbar() {
               fetchPriority="high"
               className="h-12 w-auto object-contain md:h-14"
             />
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className="text-sm font-medium text-[#475467] hover:text-[#111827] transition-colors duration-200 relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#FF6A00] group-hover:w-full transition-all duration-300" />
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -74,13 +75,13 @@ export default function Navbar() {
               variant="ghost"
               className="text-[#475467] hover:text-[#111827] hover:bg-[#F2F4F7] text-sm"
             >
-              <a href="#contact">Book a Call</a>
+              <Link href="/contact">Book a Call</Link>
             </Button>
             <Button
               asChild
               className="bg-[#FF6A00] hover:bg-[#ff8533] text-white font-semibold text-sm px-5 transition-all duration-200 hover:scale-[1.02] hover:shadow-[0_14px_30px_rgba(255,106,0,0.25)]"
             >
-              <a href="#contact">Get a Quote</a>
+              <Link href="/contact">Get a Quote</Link>
             </Button>
           </div>
 
@@ -108,14 +109,14 @@ export default function Navbar() {
           >
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="px-3 py-2.5 text-sm font-medium text-[#475467] hover:text-[#111827] hover:bg-[#F2F4F7] rounded-lg transition-all duration-200"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="flex gap-2 mt-3 pt-3 border-t border-[#E6E9EF]">
                 <Button
@@ -123,17 +124,17 @@ export default function Navbar() {
                   variant="outline"
                   className="flex-1 text-sm border-[#D0D5DD] bg-white text-[#475467] hover:text-[#111827] hover:bg-[#F2F4F7]"
                 >
-                  <a href="#contact" onClick={() => setMobileOpen(false)}>
+                  <Link href="/contact" onClick={() => setMobileOpen(false)}>
                     Book a Call
-                  </a>
+                  </Link>
                 </Button>
                 <Button
                   asChild
                   className="flex-1 bg-[#FF6A00] hover:bg-[#ff8533] text-[#111827] font-semibold text-sm"
                 >
-                  <a href="#contact" onClick={() => setMobileOpen(false)}>
+                  <Link href="/contact" onClick={() => setMobileOpen(false)}>
                     Get a Quote
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>

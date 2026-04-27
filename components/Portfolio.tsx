@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 const projects = [
@@ -70,13 +71,13 @@ export default function Portfolio() {
               continents.
             </p>
           </div>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="flex items-center gap-2 text-sm font-semibold text-[#FF6A00] hover:text-[#ffb347] transition-colors duration-200 whitespace-nowrap"
           >
             Start your project
             <ArrowUpRight size={16} />
-          </a>
+          </Link>
         </motion.div>
 
         {/* Cards */}

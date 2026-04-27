@@ -1,22 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/components/icons/brand-icons";
 
 const footerLinks = {
   Services: [
-    { label: "Web Development", href: "#services" },
-    { label: "Software Development", href: "#services" },
-    { label: "Custom Solutions", href: "#services" },
-    { label: "API & Backend", href: "#services" },
+    { label: "Web Development", href: "/services" },
+    { label: "Software Development", href: "/services" },
+    { label: "Custom Solutions", href: "/services" },
+    { label: "API & Backend", href: "/services" },
   ],
   Company: [
-    { label: "Our Work", href: "#portfolio" },
-    { label: "Why Choose Us", href: "#why-us" },
-    { label: "Client Reviews", href: "#testimonials" },
-    { label: "Global Reach", href: "#global-reach" },
-    { label: "Get a Quote", href: "#contact" },
+    { label: "Our Work", href: "/portfolio" },
+    { label: "Why Choose Us", href: "/why-us" },
+    { label: "Client Reviews", href: "/testimonials" },
+    { label: "Global Reach", href: "/global-reach" },
+    { label: "Get a Quote", href: "/contact" },
   ],
 };
 
@@ -52,8 +53,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-5">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="inline-flex items-center transition-opacity duration-200 hover:opacity-85"
               aria-label="Himnex Solutions home"
             >
@@ -64,7 +65,7 @@ export default function Footer() {
                 height={99}
                 className="h-16 w-auto object-contain"
               />
-            </a>
+            </Link>
 
             <p className="text-sm text-[#667085] leading-relaxed max-w-sm">
               Premium software and web development services from Nepal — trusted
@@ -144,12 +145,12 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-sm text-[#667085] hover:text-[#FF6A00] transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
