@@ -103,7 +103,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2.5 text-sm text-[#667085]">
                 <MapPin size={14} className="text-[#FF6A00] flex-shrink-0" />
-                Kathmandu 44600, Nepal
+                Imadol, Lalitpur 44705, Nepal
               </div>
             </div>
 

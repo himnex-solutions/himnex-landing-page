@@ -203,7 +203,7 @@ export default function Contact() {
               </a>
               <div className="flex items-center gap-3 text-sm text-[#667085]">
                 <MapPin size={15} className="text-[#FF6A00] flex-shrink-0" />
-                Kathmandu 44600, Nepal
+                Imadol, Lalitpur 44705, Nepal
               </div>
             </motion.div>
           </div>
