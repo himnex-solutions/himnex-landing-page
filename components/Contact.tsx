@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Send,
@@ -32,6 +32,68 @@ const contactMeta = [
     body: "Project-based, retainer, or staff augmentation — your call.",
   },
 ];
+
+/* ── Sequential typing hook ── */
+const TYPING_PLACEHOLDERS = [
+  "Jane Smith",
+  "jane@company.com",
+  "Acme Corp",
+  "Describe what you're building, the problem it solves, and any technical requirements you have in mind...",
+];
+
+function useSequentialTyping(texts: string[], typeSpeed = 52, deleteSpeed = 28, pauseMs = 1600) {
+  const [displays, setDisplays] = useState<string[]>(texts.map(() => ""));
+  const stateRef = useRef({ fieldIdx: 0, charIdx: 0, phase: "typing" as "typing" | "pausing" | "deleting" });
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+
+    const tick = () => {
+      const s = stateRef.current;
+      const target = texts[s.fieldIdx];
+
+      if (s.phase === "typing") {
+        if (s.charIdx < target.length) {
+          s.charIdx++;
+          setDisplays((prev) => {
+            const next = [...prev];
+            next[s.fieldIdx] = target.slice(0, s.charIdx);
+            return next;
+          });
+          timer = setTimeout(tick, typeSpeed);
+        } else {
+          s.phase = "pausing";
+          timer = setTimeout(tick, pauseMs);
+        }
+      } else if (s.phase === "pausing") {
+        s.phase = "deleting";
+        timer = setTimeout(tick, deleteSpeed);
+      } else {
+        if (s.charIdx > 0) {
+          s.charIdx--;
+          setDisplays((prev) => {
+            const next = [...prev];
+            next[s.fieldIdx] = target.slice(0, s.charIdx);
+            return next;
+          });
+          timer = setTimeout(tick, deleteSpeed);
+        } else {
+          // Move to next field
+          s.fieldIdx = (s.fieldIdx + 1) % texts.length;
+          s.charIdx = 0;
+          s.phase = "typing";
+          timer = setTimeout(tick, typeSpeed * 3);
+        }
+      }
+    };
+
+    timer = setTimeout(tick, 600);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return displays;
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -95,6 +157,8 @@ export default function Contact() {
       setLoading(false);
     }
   };
+
+  const typedPlaceholders = useSequentialTyping(TYPING_PLACEHOLDERS);
 
   return (
     <section id="contact" className="py-28 bg-[#F7F9FC] relative overflow-hidden">
@@ -277,7 +341,7 @@ export default function Contact() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Jane Smith"
+                        placeholder={typedPlaceholders[0] || " "}
                         className="w-full px-4 py-3 rounded-xl bg-white border border-[#D0D5DD] text-[#111827] text-sm placeholder-[#98A2B3] focus:outline-none focus:border-[#FF6A00]/60 focus:bg-white transition-all duration-200 shadow-[0_1px_2px_rgba(16,24,40,0.04)]"
                       />
                     </div>
@@ -295,7 +359,7 @@ export default function Contact() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="jane@company.com"
+                        placeholder={typedPlaceholders[1] || " "}
                         className="w-full px-4 py-3 rounded-xl bg-white border border-[#D0D5DD] text-[#111827] text-sm placeholder-[#98A2B3] focus:outline-none focus:border-[#FF6A00]/60 focus:bg-white transition-all duration-200 shadow-[0_1px_2px_rgba(16,24,40,0.04)]"
                       />
                     </div>
@@ -315,7 +379,7 @@ export default function Contact() {
                       type="text"
                       value={formData.company}
                       onChange={handleChange}
-                      placeholder="Acme Corp"
+                      placeholder={typedPlaceholders[2] || " "}
                       className="w-full px-4 py-3 rounded-xl bg-white border border-[#D0D5DD] text-[#111827] text-sm placeholder-[#98A2B3] focus:outline-none focus:border-[#FF6A00]/60 focus:bg-white transition-all duration-200 shadow-[0_1px_2px_rgba(16,24,40,0.04)]"
                     />
                   </div>
@@ -331,11 +395,10 @@ export default function Contact() {
                           key={type}
                           type="button"
                           onClick={() => selectOption("projectType", type)}
-                          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
-                            formData.projectType === type
+                          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${formData.projectType === type
                               ? "bg-[#FF6A00]/15 border-[#FF6A00]/50 text-[#FF6A00]"
                               : "bg-[#F7F9FC] border-[#E6E9EF] text-[#667085] hover:border-[#D0D5DD] hover:text-[#111827]"
-                          }`}
+                            }`}
                         >
                           {type}
                         </button>
@@ -354,11 +417,10 @@ export default function Contact() {
                           key={range}
                           type="button"
                           onClick={() => selectOption("budget", range)}
-                          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
-                            formData.budget === range
+                          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${formData.budget === range
                               ? "bg-[#FF6A00]/15 border-[#FF6A00]/50 text-[#FF6A00]"
                               : "bg-[#F7F9FC] border-[#E6E9EF] text-[#667085] hover:border-[#D0D5DD] hover:text-[#111827]"
-                          }`}
+                            }`}
                         >
                           {range}
                         </button>
@@ -381,7 +443,7 @@ export default function Contact() {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Describe what you're building, the problem it solves, and any technical requirements you have in mind..."
+                      placeholder={typedPlaceholders[3] || " "}
                       className="w-full px-4 py-3 rounded-xl bg-white border border-[#D0D5DD] text-[#111827] text-sm placeholder-[#98A2B3] focus:outline-none focus:border-[#FF6A00]/60 focus:bg-white transition-all duration-200 resize-none leading-relaxed shadow-[0_1px_2px_rgba(16,24,40,0.04)]"
                     />
                   </div>
