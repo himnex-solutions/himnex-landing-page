@@ -13,10 +13,12 @@ const footerLinks = {
     { label: "API & Backend", href: "/services" },
   ],
   Company: [
+    { label: "Our Process", href: "/process" },
+    { label: "Technology Stack", href: "/tech-stack" },
     { label: "Our Work", href: "/portfolio" },
     { label: "Why Choose Us", href: "/why-us" },
     { label: "Client Reviews", href: "/testimonials" },
-    { label: "Global Reach", href: "/global-reach" },
+    { label: "FAQ", href: "/faq" },
     { label: "Get a Quote", href: "/contact" },
   ],
 };

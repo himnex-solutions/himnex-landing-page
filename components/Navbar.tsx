@@ -9,9 +9,10 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "Services", href: "/services" },
+  { label: "Process", href: "/process" },
+  { label: "Tech", href: "/tech-stack" },
   { label: "Work", href: "/portfolio" },
-  { label: "Why Us", href: "/why-us" },
-  { label: "Reviews", href: "/testimonials" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -55,7 +56,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.label}

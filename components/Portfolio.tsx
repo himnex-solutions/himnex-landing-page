@@ -3,7 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Clock3, TrendingUp } from "lucide-react";
 
 const projects = [
   {
@@ -14,6 +14,11 @@ const projects = [
       "Full-stack e-commerce solution with real-time inventory, payment integration, and a CMS — handling 10K+ daily users.",
     image: "/images/portfolio-ecommerce.jpg",
     tags: ["Next.js", "Stripe", "PostgreSQL"],
+    industry: "Retail",
+    timeline: "10 weeks",
+    outcome:
+      "Checkout flow, product management, and live inventory connected in one platform.",
+    metric: "10K+ daily users",
   },
   {
     id: "fintech-app",
@@ -23,6 +28,11 @@ const projects = [
       "A cross-platform fintech app with KYC, wallet features, and AI-powered spending insights for a UK-based startup.",
     image: "/images/portfolio-fintech.jpg",
     tags: ["React Native", "Node.js", "MongoDB"],
+    industry: "FinTech",
+    timeline: "12 weeks",
+    outcome:
+      "Secure onboarding, wallet workflows, and analytics shipped for MVP validation.",
+    metric: "MVP launched",
   },
   {
     id: "saas-dashboard",
@@ -32,6 +42,11 @@ const projects = [
       "Real-time analytics platform for a US SaaS company — processing 5M+ events/day with sub-second query performance.",
     image: "/images/portfolio-saas.jpg",
     tags: ["React", "Go", "ClickHouse"],
+    industry: "SaaS",
+    timeline: "8 weeks",
+    outcome:
+      "Decision-ready dashboards, event pipelines, and fast reporting for product teams.",
+    metric: "5M+ events/day",
   },
 ];
 
@@ -93,7 +108,7 @@ export default function Portfolio() {
               key={project.id}
               id={`portfolio-${project.id}`}
               variants={cardVariants}
-              className="group relative rounded-2xl overflow-hidden border border-[#E6E9EF] bg-white hover:border-[#FF6A00]/30 transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.12)]"
+              className="group relative overflow-hidden rounded-2xl border border-[#E6E9EF] bg-white transition-all duration-400 hover:-translate-y-2 hover:border-[#FF6A00]/30 hover:shadow-[0_30px_80px_rgba(15,23,42,0.12)]"
             >
               {/* Image */}
               <div className="relative h-52 overflow-hidden bg-[#F2F4F7]">
@@ -106,15 +121,15 @@ export default function Portfolio() {
                 />
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-[#111827]/55 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-                  <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FF6A00] text-[#111827] font-bold text-sm">
-                    <span>View Project</span>
-                    <ExternalLink size={14} />
+                  <div className="flex items-center gap-2 rounded-full bg-[#FF6A00] px-5 py-2.5 text-sm font-bold text-white">
+                    <span>Case Study</span>
+                    <ArrowUpRight size={14} />
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6 bg-white space-y-3">
+              <div className="space-y-5 bg-white p-6">
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF6A00] mb-1.5 block">
@@ -132,7 +147,39 @@ export default function Portfolio() {
                 <p className="text-sm text-[#667085] leading-relaxed">
                   {project.description}
                 </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="rounded-xl border border-[#E6E9EF] bg-[#F7F9FC] p-3">
+                    <div className="mb-1 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#98A2B3]">
+                      <Clock3 size={12} className="text-[#FF6A00]" />
+                      Timeline
+                    </div>
+                    <div className="text-sm font-bold text-[#111827]">
+                      {project.timeline}
+                    </div>
+                  </div>
+                  <div className="rounded-xl border border-[#E6E9EF] bg-[#F7F9FC] p-3">
+                    <div className="mb-1 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#98A2B3]">
+                      <TrendingUp size={12} className="text-[#FF6A00]" />
+                      Result
+                    </div>
+                    <div className="text-sm font-bold text-[#111827]">
+                      {project.metric}
+                    </div>
+                  </div>
+                </div>
+                <div className="rounded-xl border border-[#E6E9EF] bg-white p-3">
+                  <div className="mb-1.5 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#475467]">
+                    <CheckCircle2 size={14} className="text-[#16A34A]" />
+                    Outcome
+                  </div>
+                  <p className="text-xs leading-relaxed text-[#667085]">
+                    {project.outcome}
+                  </p>
+                </div>
                 <div className="flex flex-wrap gap-1.5 pt-1">
+                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#FFF4EC] text-[#FF6A00] border border-[#FED7AA]">
+                    {project.industry}
+                  </span>
                   {project.tags.map((tag) => (
                     <span
                       key={tag}

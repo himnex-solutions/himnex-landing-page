@@ -1,9 +1,12 @@
 export const sectionRoutes = {
   services: "services",
+  process: "process",
+  "tech-stack": "tech-stack",
   portfolio: "portfolio",
   "why-us": "why-us",
   testimonials: "testimonials",
   "global-reach": "global-reach",
+  faq: "faq",
   contact: "contact",
 } as const;
 
