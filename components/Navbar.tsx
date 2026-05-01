@@ -31,11 +31,10 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-white/90 backdrop-blur-xl border-b border-[#E6E9EF] shadow-[0_12px_40px_rgba(15,23,42,0.08)]"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -45,7 +44,7 @@ export default function Navbar() {
             aria-label="Himnex Solutions home"
           >
             <Image
-              src="/images/my-logo.png"
+              src="/images/logo.png"
               alt="Himnex Solutions"
               width={230}
               height={91}

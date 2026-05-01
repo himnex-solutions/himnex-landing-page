@@ -5,20 +5,50 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle2, Clock3, TrendingUp } from "lucide-react";
 
-const projects = [
+type Project = {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  tags: string[];
+  industry: string;
+  timeline: string;
+  outcome: string;
+  metric: string;
+  link?: string;
+};
+
+const projects: Project[] = [
   {
-    id: "ecommerce-platform",
-    title: "E-Commerce Platform",
-    category: "Web Development",
+    id: "pixltools",
+    title: "PixlTools",
+    category: "Web Application",
     description:
-      "Full-stack e-commerce solution with real-time inventory, payment integration, and a CMS — handling 10K+ daily users.",
-    image: "/images/portfolio-ecommerce.jpg",
-    tags: ["Next.js", "Stripe", "PostgreSQL"],
-    industry: "Retail",
-    timeline: "10 weeks",
+      "A professional-grade, 100% private online image processing toolkit powered by Sharp, offering 30+ tools completely free.",
+    image: "/images/pixltool.png",
+    tags: ["Node.js", "Sharp", "React"],
+    industry: "SaaS / Utilities",
+    timeline: "Ongoing",
     outcome:
-      "Checkout flow, product management, and live inventory connected in one platform.",
-    metric: "10K+ daily users",
+      "Built a secure, fast, and account-free platform used by hundreds of thousands of creators and developers every month.",
+    metric: "100K+ Users/mo",
+    link: "https://www.pixltools.com/",
+  },
+  {
+    id: "raadhya-ethnica",
+    title: "Raadhya Ethnica",
+    category: "eCommerce Platform",
+    description:
+      "A modern, premium women's kurtas online store featuring real-time cart updates, Razorpay checkout, and advanced SEO optimization.",
+    image: "/images/raadhya.png",
+    tags: ["Next.js 14", "Zustand", "Tailwind CSS"],
+    industry: "Fashion Retail",
+    timeline: "8 weeks",
+    outcome:
+      "Delivered a high-performance, responsive store with schema markup, beautiful UI, and WhatsApp support integration.",
+    metric: "Production Ready",
+    link: "https://www.raadhyaethnica.com/",
   },
   {
     id: "fintech-app",
@@ -33,20 +63,6 @@ const projects = [
     outcome:
       "Secure onboarding, wallet workflows, and analytics shipped for MVP validation.",
     metric: "MVP launched",
-  },
-  {
-    id: "saas-dashboard",
-    title: "SaaS Analytics Dashboard",
-    category: "Software Development",
-    description:
-      "Real-time analytics platform for a US SaaS company — processing 5M+ events/day with sub-second query performance.",
-    image: "/images/portfolio-saas.jpg",
-    tags: ["React", "Go", "ClickHouse"],
-    industry: "SaaS",
-    timeline: "8 weeks",
-    outcome:
-      "Decision-ready dashboards, event pipelines, and fast reporting for product teams.",
-    metric: "5M+ events/day",
   },
 ];
 
@@ -108,7 +124,8 @@ export default function Portfolio() {
               key={project.id}
               id={`portfolio-${project.id}`}
               variants={cardVariants}
-              className="group relative overflow-hidden rounded-2xl border border-[#E6E9EF] bg-white transition-all duration-400 hover:-translate-y-2 hover:border-[#FF6A00]/30 hover:shadow-[0_30px_80px_rgba(15,23,42,0.12)]"
+              onClick={() => project.link && window.open(project.link, "_blank")}
+              className={`group relative overflow-hidden rounded-2xl border border-[#E6E9EF] bg-white transition-all duration-400 hover:-translate-y-2 hover:border-[#FF6A00]/30 hover:shadow-[0_30px_80px_rgba(15,23,42,0.12)] ${project.link ? "cursor-pointer" : ""}`}
             >
               {/* Image */}
               <div className="relative h-52 overflow-hidden bg-[#F2F4F7]">
@@ -122,7 +139,7 @@ export default function Portfolio() {
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-[#111827]/55 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
                   <div className="flex items-center gap-2 rounded-full bg-[#FF6A00] px-5 py-2.5 text-sm font-bold text-white">
-                    <span>Case Study</span>
+                    <span>{project.link ? "Visit Website" : "Case Study"}</span>
                     <ArrowUpRight size={14} />
                   </div>
                 </div>

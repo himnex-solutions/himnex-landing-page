@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
-import { GithubIcon, LinkedinIcon, XIcon } from "@/components/icons/brand-icons";
+import { FacebookIcon, InstagramIcon, LinkedinIcon } from "@/components/icons/brand-icons";
 
 const footerLinks = {
   Services: [
@@ -25,10 +25,10 @@ const footerLinks = {
 
 const socials = [
   {
-    icon: GithubIcon,
-    href: "https://github.com/himnexsolutions",
-    label: "GitHub",
-    id: "footer-github",
+    icon: FacebookIcon,
+    href: "https://www.facebook.com/people/Himnex-Solutions/61560646745719/?rdid=0fddHi5xTy58mV30&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CXGegJxs9%2F%3Fref%3D1",
+    label: "Facebook",
+    id: "footer-facebook",
   },
   {
     icon: LinkedinIcon,
@@ -37,10 +37,10 @@ const socials = [
     id: "footer-linkedin",
   },
   {
-    icon: XIcon,
-    href: "https://x.com/himnexsolutions",
-    label: "X (Twitter)",
-    id: "footer-twitter",
+    icon: InstagramIcon,
+    href: "https://instagram.com/himnexsolutions",
+    label: "Instagram",
+    id: "footer-instagram",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Footer() {
               aria-label="Himnex Solutions home"
             >
               <Image
-                src="/images/my-logo.png"
+                src="/images/logo.png"
                 alt="Himnex Solutions"
                 width={250}
                 height={99}

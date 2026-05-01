@@ -2,13 +2,15 @@
 
 import { motion, type Variants } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import ReactCountryFlag from "react-country-flag";
 
 const testimonials = [
   {
     id: "testimonial-1",
     name: "James Whitfield",
     role: "CTO, VaultPay",
-    country: "🇬🇧",
+    countryCode: "GB",
+    image: "https://i.pravatar.cc/150?u=james",
     rating: 5,
     quote:
       "Himnex delivered our fintech MVP in record time — clean code, zero bugs at launch, and they were available whenever we needed them. Best technical partner we've ever worked with.",
@@ -17,7 +19,8 @@ const testimonials = [
     id: "testimonial-2",
     name: "Sarah Kim",
     role: "Founder, GrowthStack",
-    country: "🇺🇸",
+    countryCode: "US",
+    image: "https://i.pravatar.cc/150?u=sarah",
     rating: 5,
     quote:
       "I was skeptical hiring a team from Nepal, but these guys absolutely blew me away. Top-tier React & Node skills, excellent communication, and they truly understood our product vision.",
@@ -26,7 +29,8 @@ const testimonials = [
     id: "testimonial-3",
     name: "Lucas Bauer",
     role: "Product Lead, Nexify",
-    country: "🇩🇪",
+    countryCode: "DE",
+    image: "https://i.pravatar.cc/150?u=lucas",
     rating: 5,
     quote:
       "Three projects in, and every single one delivered on time and above spec. They don't just write code — they solve problems. Himnex is our permanent development partner.",
@@ -35,7 +39,8 @@ const testimonials = [
     id: "testimonial-4",
     name: "Priya Nanda",
     role: "CEO, ClearRoute",
-    country: "🇸🇬",
+    countryCode: "SG",
+    image: "https://i.pravatar.cc/150?u=priya",
     rating: 5,
     quote:
       "The SaaS dashboard they built handles millions of events a day without a hiccup. Professional, transparent, and genuinely invested in our success. Highly recommend.",
@@ -44,7 +49,8 @@ const testimonials = [
     id: "testimonial-5",
     name: "Tom Hargreaves",
     role: "Engineering Manager, ShipBase",
-    country: "🇦🇺",
+    countryCode: "AU",
+    image: "https://i.pravatar.cc/150?u=tom",
     rating: 5,
     quote:
       "Himnex overhauled our legacy backend and migrated us to a microservices architecture — took 6 weeks, zero downtime. Extraordinary work.",
@@ -53,7 +59,8 @@ const testimonials = [
     id: "testimonial-6",
     name: "Anabela Costa",
     role: "Head of Product, Loopify",
-    country: "🇨🇦",
+    countryCode: "CA",
+    image: "https://i.pravatar.cc/150?u=anabela",
     rating: 5,
     quote:
       "We had a tight timeline and an impossible feature list. Himnex made it possible — and even suggested optimizations we hadn't thought of. True partners, not just contractors.",
@@ -138,16 +145,25 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-2 border-t border-[#E6E9EF]">
-                {/* Avatar placeholder */}
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#FF6A00]/30 to-[#FF6A00]/10 border border-[#FF6A00]/20 flex items-center justify-center text-xs font-bold text-[#FF6A00] flex-shrink-0">
-                  {t.name.charAt(0)}
+                {/* Avatar */}
+                <div className="w-9 h-9 rounded-full overflow-hidden border border-[#E6E9EF] flex-shrink-0">
+                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-1.5">
                     <span className="text-sm font-bold text-[#111827] truncate">
                       {t.name}
                     </span>
-                    <span className="text-base">{t.country}</span>
+                    <ReactCountryFlag
+                      countryCode={t.countryCode}
+                      svg
+                      style={{
+                        width: '1.2em',
+                        height: '1.2em',
+                        borderRadius: '2px',
+                      }}
+                      title={t.countryCode}
+                    />
                   </div>
                   <span className="text-xs text-[#667085]">{t.role}</span>
                 </div>

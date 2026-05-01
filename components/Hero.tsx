@@ -17,6 +17,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/icons/brand-icons";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 26 },
@@ -79,11 +80,11 @@ export default function Hero() {
             className="space-y-5"
           >
             <h1 className="max-w-5xl text-4xl font-black leading-[1.03] tracking-tight text-[#111827] sm:text-6xl lg:text-6xl">
-            Custom software
+              Custom software
               <span className="block text-brand-orange">for Ambitious Teams</span>
             </h1>
             <p className="max-w-xl text-base leading-8 text-[#5F6B7A] sm:text-lg">
-            Himnex Solutions works with growing companies to design and build web platforms, systems, and APIs that genuinely help move the business forward and scale with confidence.
+              Himnex Solutions works with growing companies to design and build web platforms, systems, and APIs that genuinely help move the business forward and scale with confidence.
             </p>
           </motion.div>
 
@@ -108,11 +109,11 @@ export default function Hero() {
               asChild
               size="lg"
               variant="outline"
-              className="h-12 rounded-lg border-[#D0D5DD] bg-white px-6 text-base font-semibold text-[#111827] shadow-[0_12px_30px_rgba(15,23,42,0.07)] hover:bg-[#F7F9FC]"
+              className="h-12 rounded-lg border-[#25D366]/30 bg-[#25D366]/5 px-6 text-base font-semibold text-[#111827] shadow-[0_12px_30px_rgba(37,211,102,0.06)] hover:bg-[#25D366]/15 hover:border-[#25D366]/50 transition-all duration-200"
             >
-              <Link href="/contact" id="hero-book-call-btn">
-                <Calendar size={17} />
-                Book Strategy Call
+              <Link href="https://wa.me/9779869100969" target="_blank" rel="noopener noreferrer" id="hero-whatsapp-btn">
+                <WhatsAppIcon size={20} className="text-[#25D366] mr-2" />
+                Chat on WhatsApp
               </Link>
             </Button>
           </motion.div>
@@ -186,15 +187,15 @@ function DeliveryConsole() {
         </div>
       </div>
 
-      <div className="absolute left-8 top-32 w-[43%] space-y-4">
-        <div className="rounded-xl border border-[#E6E9EF] bg-white p-4 shadow-[0_18px_44px_rgba(15,23,42,0.07)]">
-          <div className="mb-4 flex items-center justify-between">
+      <div className="absolute left-8 top-[6.5rem] lg:top-28 w-[43%] space-y-3 z-10">
+        <div className="rounded-xl border border-[#E6E9EF] bg-white p-3.5 shadow-[0_18px_44px_rgba(15,23,42,0.07)]">
+          <div className="mb-3 flex items-center justify-between">
             <div className="text-sm font-bold text-[#111827]">
               Delivery velocity
             </div>
             <LineChart size={17} className="text-brand-orange" />
           </div>
-          <div className="flex h-24 items-end gap-2">
+          <div className="flex h-16 items-end gap-2">
             {[28, 44, 38, 61, 55, 78, 68, 92].map((height, index) => (
               <motion.div
                 key={height}
@@ -208,19 +209,19 @@ function DeliveryConsole() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-[#E6E9EF] bg-white p-4 shadow-[0_18px_44px_rgba(15,23,42,0.06)]">
-          <div className="mb-4 flex items-center gap-2 text-sm font-bold text-[#111827]">
+        <div className="rounded-xl border border-[#E6E9EF] bg-white p-3.5 shadow-[0_18px_44px_rgba(15,23,42,0.06)]">
+          <div className="mb-3 flex items-center gap-2 text-sm font-bold text-[#111827]">
             <ShieldCheck size={17} className="text-[#16A34A]" />
             Build integrity
           </div>
-          <div className="space-y-3">
+          <div className="space-y-2.5">
             {deliveryLanes.map((lane) => (
               <div key={lane.label}>
-                <div className="mb-1.5 flex items-center justify-between text-xs font-semibold text-[#667085]">
+                <div className="mb-1 flex items-center justify-between text-[11px] font-semibold text-[#667085]">
                   <span>{lane.label}</span>
                   <span>{lane.width}</span>
                 </div>
-                <div className="h-2 overflow-hidden rounded-full bg-[#EEF2F6]">
+                <div className="h-1.5 overflow-hidden rounded-full bg-[#EEF2F6]">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: lane.width }}
@@ -234,7 +235,7 @@ function DeliveryConsole() {
         </div>
       </div>
 
-      <div className="absolute right-8 top-32 h-67.5 w-[47%] overflow-hidden rounded-xl border border-[#E6E9EF] bg-[#111827] shadow-[0_28px_70px_rgba(17,24,39,0.22)]">
+      <div className="absolute right-8 top-[6.5rem] lg:top-28 h-[18.7rem] w-[45%] overflow-hidden rounded-xl border border-[#E6E9EF] bg-[#111827] shadow-[0_28px_70px_rgba(17,24,39,0.22)]">
         <div className="flex h-11 items-center justify-between border-b border-white/10 px-4">
           <div className="flex gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-brand-orange" />
