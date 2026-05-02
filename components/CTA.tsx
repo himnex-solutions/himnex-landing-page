@@ -7,12 +7,12 @@ import { Button } from "@/components/ui/button";
 
 export default function CTA() {
   return (
-    <section id="cta" className="py-24 bg-white relative overflow-hidden">
+    <section id="cta" className="py-24 bg-[#F7F9FC] relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px section-divider" />
 
       {/* Background wash */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-x-0 top-0 h-full bg-[linear-gradient(180deg,#FFFFFF_0%,#FFF8F3_50%,#FFFFFF_100%)]" />
+      <div className="absolute pointer-events-none inset-0">
+        <div className="absolute inset-x-0 top-0 h-72 bg-[linear-gradient(180deg,rgba(255,106,0,0.055),rgba(247,249,252,0))]" />
       </div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

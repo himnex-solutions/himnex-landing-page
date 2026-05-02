@@ -87,9 +87,10 @@ export default function FAQ() {
     <section id="faq" className="relative overflow-hidden bg-[#F7F9FC] py-28">
       <div className="absolute left-0 right-0 top-0 h-px section-divider" />
 
-      {/* Ambient blobs */}
-      <div className="absolute -right-20 top-10 h-80 w-80 rounded-full bg-[#FF6A00]/5 blur-[80px] pointer-events-none" />
-      <div className="absolute -left-20 bottom-10 h-64 w-64 rounded-full bg-[#FF6A00]/4 blur-[64px] pointer-events-none" />
+      {/* Background wash */}
+      <div className="absolute pointer-events-none inset-0">
+        <div className="absolute inset-x-0 top-0 h-72 bg-[linear-gradient(180deg,rgba(255,106,0,0.055),rgba(247,249,252,0))]" />
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">

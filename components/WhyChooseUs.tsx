@@ -52,12 +52,12 @@ const itemVariants: Variants = {
 export default function WhyChooseUs() {
   return (
     <section id="why-us" className="py-28 bg-[#F7F9FC] relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-x-0 top-0 h-64 bg-[linear-gradient(180deg,rgba(255,106,0,0.06),rgba(255,255,255,0))]" />
-      </div>
-
       <div className="absolute top-0 left-0 right-0 h-px section-divider" />
+
+      {/* Background wash */}
+      <div className="absolute pointer-events-none inset-0">
+        <div className="absolute inset-x-0 top-0 h-72 bg-[linear-gradient(180deg,rgba(255,106,0,0.055),rgba(247,249,252,0))]" />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}

@@ -166,7 +166,7 @@ export default function Contact() {
 
       {/* Background wash */}
       <div className="absolute pointer-events-none inset-0">
-        <div className="absolute inset-x-0 top-0 h-72 bg-[linear-gradient(180deg,rgba(255,106,0,0.06),rgba(247,249,252,0))]" />
+        <div className="absolute inset-x-0 top-0 h-72 bg-[linear-gradient(180deg,rgba(255,106,0,0.055),rgba(247,249,252,0))]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -396,8 +396,8 @@ export default function Contact() {
                           type="button"
                           onClick={() => selectOption("projectType", type)}
                           className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${formData.projectType === type
-                              ? "bg-[#FF6A00]/15 border-[#FF6A00]/50 text-[#FF6A00]"
-                              : "bg-[#F7F9FC] border-[#E6E9EF] text-[#667085] hover:border-[#D0D5DD] hover:text-[#111827]"
+                            ? "bg-[#FF6A00]/15 border-[#FF6A00]/50 text-[#FF6A00]"
+                            : "bg-[#F7F9FC] border-[#E6E9EF] text-[#667085] hover:border-[#D0D5DD] hover:text-[#111827]"
                             }`}
                         >
                           {type}
@@ -418,8 +418,8 @@ export default function Contact() {
                           type="button"
                           onClick={() => selectOption("budget", range)}
                           className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${formData.budget === range
-                              ? "bg-[#FF6A00]/15 border-[#FF6A00]/50 text-[#FF6A00]"
-                              : "bg-[#F7F9FC] border-[#E6E9EF] text-[#667085] hover:border-[#D0D5DD] hover:text-[#111827]"
+                            ? "bg-[#FF6A00]/15 border-[#FF6A00]/50 text-[#FF6A00]"
+                            : "bg-[#F7F9FC] border-[#E6E9EF] text-[#667085] hover:border-[#D0D5DD] hover:text-[#111827]"
                             }`}
                         >
                           {range}

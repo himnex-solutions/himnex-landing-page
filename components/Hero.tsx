@@ -47,10 +47,10 @@ const deliveryLanes = [
 ];
 
 const systemNodes = [
-  { label: "Web", icon: Globe2, position: "left-[8%] top-[18%]" },
-  { label: "API", icon: Code2, position: "right-[10%] top-[22%]" },
-  { label: "Data", icon: Layers3, position: "left-[15%] bottom-[16%]" },
-  { label: "Scale", icon: Network, position: "right-[14%] bottom-[14%]" },
+  { label: "Web", icon: Globe2, position: "left-[10%] top-[18%]" },
+  { label: "API", icon: Code2, position: "right-[10%] top-[18%]" },
+  { label: "Data", icon: Layers3, position: "left-[10%] bottom-[18%]" },
+  { label: "Scale", icon: Network, position: "right-[10%] bottom-[18%]" },
 ];
 
 export default function Hero() {
@@ -70,7 +70,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(116deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.76)_44%,rgba(255,106,0,0.08)_44.2%,rgba(255,106,0,0.02)_64%,rgba(17,24,39,0.05)_64.2%,rgba(255,255,255,0.84)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-28 bg-linear-to-t from-white to-transparent" />
 
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:px-8">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.15fr] lg:gap-14 lg:px-8">
         <div className="max-w-2xl">
           <motion.div
             variants={fadeUp}
@@ -142,10 +142,10 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.52}
-            className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-[#667085]"
+            className="mt-6 flex flex-wrap lg:flex-nowrap items-center gap-x-4 gap-y-2 text-sm font-medium text-[#667085]"
           >
             {capabilities.map((capability) => (
-              <span key={capability} className="inline-flex items-center gap-1.5">
+              <span key={capability} className="inline-flex items-center gap-1.5 whitespace-nowrap">
                 <ChevronRight size={14} className="text-brand-orange" />
                 {capability}
               </span>
@@ -168,7 +168,7 @@ export default function Hero() {
 
 function DeliveryConsole() {
   return (
-    <div className="relative ml-auto aspect-[1.05/1] w-full max-w-155">
+    <div className="relative ml-auto aspect-[1.05/1] w-full max-w-[700px]">
       <div className="absolute inset-0 rounded-4xl border border-[#111827]/10 bg-white/86 shadow-[0_34px_90px_rgba(15,23,42,0.14)] backdrop-blur-xl" />
       <div className="absolute inset-3 rounded-3xl border border-[#E6E9EF] bg-[#FCFDFE]" />
 

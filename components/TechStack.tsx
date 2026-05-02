@@ -178,19 +178,13 @@ export default function TechStack() {
   const TabIcon = active.tabIcon;
 
   return (
-    <section id="tech-stack" className="relative overflow-hidden bg-white py-28">
+    <section id="tech-stack" className="relative overflow-hidden bg-[#F7F9FC] py-28">
       <div className="absolute left-0 right-0 top-0 h-px section-divider" />
 
-      {/* Dot grid */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle, rgba(17,24,39,0.055) 1px, transparent 1px)`,
-          backgroundSize: "28px 28px",
-        }}
-      />
-      <div className="absolute right-0 -top-10 h-[500px] w-[500px] rounded-full bg-[#FF6A00]/6 blur-[100px] pointer-events-none" />
-      <div className="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-[#FF6A00]/4 blur-[80px] pointer-events-none" />
+      {/* Background wash */}
+      <div className="absolute pointer-events-none inset-0">
+        <div className="absolute inset-x-0 top-0 h-72 bg-[linear-gradient(180deg,rgba(255,106,0,0.055),rgba(247,249,252,0))]" />
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -200,18 +194,16 @@ export default function TechStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="mx-auto mb-14 max-w-2xl text-center"
+          className="mb-14 max-w-5xl mx-auto text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#FF6A00]/25 bg-[#FF6A00]/8 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#FF6A00]">
-            Technology Stack
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.22em] text-[#FF6A00] mb-3">
+            Tech Stack
           </span>
-          <h2 className="mt-5 text-4xl font-bold text-[#111827] sm:text-5xl">
-            Built With the{" "}
-            <span className="text-gradient-orange">Right Tools</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#111827] mb-4">
+            Simple. Smart. Technology.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[#667085]">
-            We choose proven technologies that help your product launch fast,
-            stay maintainable, and scale as your business grows.
+            We select proven tech that supports fast launches, easy maintenance, and long-term growth.
           </p>
         </motion.div>
 
@@ -221,7 +213,7 @@ export default function TechStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15, duration: 0.5 }}
-          className="mb-6 flex flex-wrap items-center justify-center gap-1.5 rounded-2xl border border-[#E6E9EF] bg-[#F7F9FC] p-1.5"
+          className="mb-6 mx-auto flex w-fit flex-wrap items-center justify-center gap-1.5 rounded-2xl border border-[#E6E9EF] bg-[#F7F9FC] p-1.5"
         >
           {categories.map((cat) => {
             const CatIcon = cat.tabIcon;
@@ -231,9 +223,8 @@ export default function TechStack() {
                 key={cat.id}
                 id={`tech-tab-${cat.id}`}
                 onClick={() => setActiveId(cat.id)}
-                className={`relative flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors duration-200 ${
-                  isActive ? "text-white" : "text-[#667085] hover:text-[#111827]"
-                }`}
+                className={`relative flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors duration-200 ${isActive ? "text-white" : "text-[#667085] hover:text-[#111827]"
+                  }`}
               >
                 {isActive && (
                   <motion.div

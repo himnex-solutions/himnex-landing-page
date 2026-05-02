@@ -78,10 +78,15 @@ const cardVariants: Variants = {
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-28 bg-white relative">
+    <section id="portfolio" className="py-28 bg-[#F7F9FC] relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px section-divider" />
+      
+      {/* Background wash */}
+      <div className="absolute pointer-events-none inset-0">
+        <div className="absolute inset-x-0 top-0 h-72 bg-[linear-gradient(180deg,rgba(255,106,0,0.055),rgba(247,249,252,0))]" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
