@@ -100,11 +100,10 @@ export default function Portfolio() {
               Our Work
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold text-[#111827]">
-              Featured Projects
+              Software Projects Built from Nepal
             </h2>
             <p className="text-[#667085] text-lg max-w-md leading-relaxed">
-              Real solutions built for real businesses — across industries and
-              continents.
+              Real software, ecommerce, SaaS, and web application work built for businesses across industries and continents.
             </p>
           </div>
           <Link

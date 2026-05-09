@@ -16,7 +16,7 @@ const services = [
     icon: Globe,
     title: "Web Development",
     description:
-      "Modern, performant websites and web apps built with Next.js and React. SEO-ready and conversion-optimized by default.",
+      "SEO-ready websites and web apps built with Next.js and React for companies in Nepal, the US, UK, Australia, and other global markets.",
     featured: false,
     iconGradient: "linear-gradient(135deg, #00BCD4, #0097A7)",
   },
@@ -25,7 +25,7 @@ const services = [
     icon: Code2,
     title: "Software Development",
     description:
-      "End-to-end software solutions crafted for scale. From MVP to enterprise-grade platforms — clean, tested, and maintainable.",
+      "Custom software development from Nepal, from MVPs to enterprise-grade platforms with clean architecture, testing, and long-term maintainability.",
     featured: true,
     iconGradient: "linear-gradient(135deg, #FF6A00, #FF3C00)",
   },
@@ -34,7 +34,7 @@ const services = [
     icon: Puzzle,
     title: "Custom Solutions",
     description:
-      "Tailored software built exactly around your business needs. Purpose-built engineering that solves real problems.",
+      "Purpose-built dashboards, booking systems, CRM tools, automation, and business software shaped around your exact workflow.",
     featured: false,
     iconGradient: "linear-gradient(135deg, #5C6BC0, #3949AB)",
   },
@@ -43,7 +43,7 @@ const services = [
     icon: Smartphone,
     title: "Mobile Apps",
     description:
-      "Cross-platform iOS & Android apps built with React Native. Fast, beautiful, and built to retain users.",
+      "Cross-platform iOS and Android apps built with React Native for startups, service businesses, ecommerce brands, and internal teams.",
     featured: false,
     iconGradient: "linear-gradient(135deg, #FF9800, #F57C00)",
   },
@@ -52,7 +52,7 @@ const services = [
     icon: Server,
     title: "API & Backend",
     description:
-      "Robust, secure, and lightning-fast APIs. GraphQL, REST, microservices — built to handle whatever your users throw at them.",
+      "Secure REST, GraphQL, integrations, auth, payments, and backend systems built to support real traffic and business growth.",
     featured: false,
     iconGradient: "linear-gradient(135deg, #7C4DFF, #651FFF)",
   },
@@ -61,7 +61,7 @@ const services = [
     icon: Cloud,
     title: "Cloud & DevOps",
     description:
-      "CI/CD pipelines, cloud infrastructure, and scalable deployments on AWS, GCP, and Azure — zero downtime guaranteed.",
+      "CI/CD, cloud infrastructure, monitoring, and scalable deployments on AWS, GCP, and Azure for reliable production software.",
     featured: false,
     iconGradient: "linear-gradient(135deg, #26A69A, #00897B)",
   },
@@ -99,10 +99,10 @@ export default function Services() {
             What We Offer
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-[#111827] mb-4">
-            Our Services
+            Software Development Services from Nepal
           </h2>
           <p className="text-[#667085] text-lg max-w-l mx-auto leading-relaxed">
-            Everything you need to build, launch, and scale your digital product.
+            Everything you need to build, launch, and scale a serious digital product with a Nepal-based software team.
           </p>
         </motion.div>
 

@@ -28,14 +28,14 @@ const reasons = [
     icon: Award,
     title: "International Quality",
     description:
-      "Our standards match the best in Silicon Valley. We bring world-class engineering at a competitive price point.",
+      "Global delivery standards with the cost advantage of a software development team based in Nepal.",
   },
   {
     id: "reliable-communication",
     icon: MessageCircle,
     title: "Reliable Communication",
     description:
-      "Daily check-ins, Slack/Discord integration, transparent progress reports. You're never left in the dark.",
+      "Clear English communication, scheduled calls, written updates, and timezone-friendly collaboration for local and international clients.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
             Our Advantage
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-[#111827]">
-            Why Choose{" "}
+            Why Hire{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #FF6A00, #ffb347)",
@@ -81,11 +81,11 @@ export default function WhyChooseUs() {
                 backgroundClip: "text",
               }}
             >
-              Himnex?
+              Himnex from Nepal?
             </span>
           </h2>
           <p className="text-[#667085] text-lg max-w-xl mx-auto leading-relaxed">
-            We&apos;re not just developers — we&apos;re partners invested in your success.
+            We combine Nepal-based engineering value with the product discipline international clients expect.
           </p>
         </motion.div>
 

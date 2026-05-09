@@ -102,10 +102,10 @@ export default function Process() {
             How We Work
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-[#111827] leading-tight">
-            Our Build Process
+            Our Software Build Process
           </h2>
           <p className="text-[#667085] text-lg max-w-l mx-auto leading-relaxed">
-            Building software is complex, so we keep everything clear and organized.
+            A clear process for building custom software, websites, SaaS products, and mobile apps from Nepal.
           </p>
         </motion.div>
 

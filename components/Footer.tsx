@@ -7,10 +7,10 @@ import { FacebookIcon, InstagramIcon, LinkedinIcon } from "@/components/icons/br
 
 const footerLinks = {
   Services: [
-    { label: "Web Development", href: "/services" },
+    { label: "Web Development in Nepal", href: "/services" },
     { label: "Software Development", href: "/services" },
-    { label: "Custom Solutions", href: "/services" },
-    { label: "API & Backend", href: "/services" },
+    { label: "SaaS & Custom Solutions", href: "/services" },
+    { label: "API & Backend Development", href: "/services" },
   ],
   Company: [
     { label: "Our Process", href: "/process" },
@@ -70,9 +70,9 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm text-[#667085] leading-relaxed max-w-sm">
-              Premium software and web development services from Nepal — trusted
-              by businesses worldwide. We turn ideas into scalable digital
-              products.
+              Himnex Solutions is a software development company in Nepal trusted
+              by Nepali and international clients for scalable websites, web
+              apps, APIs, SaaS products, and mobile apps.
             </p>
 
             {/* Contact info */}
@@ -166,7 +166,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Himnex Solutions. All rights reserved.
           </p>
           <p className="text-xs text-[#98A2B3]">
-            Built with ❤️ in Nepal, serving the world.
+            Built in Nepal, serving the world.
           </p>
         </div>
       </div>

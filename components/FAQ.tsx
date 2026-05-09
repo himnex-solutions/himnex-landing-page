@@ -19,9 +19,9 @@ const faqs = [
   },
   {
     id: "international",
-    question: "Can you work with international clients?",
+    question: "Can clients outside Nepal hire Himnex Solutions?",
     answer:
-      "Yes. We work remotely with teams across time zones using clear milestones, scheduled calls, shared project boards, and written progress updates. Most of our current clients are based outside Nepal.",
+      "Yes. International clients hire our Nepal-based software team for websites, SaaS platforms, mobile apps, APIs, and long-term product support. We work across time zones using clear milestones, scheduled calls, shared project boards, and written progress updates.",
   },
   {
     id: "maintenance",
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     id: "estimate",
-    question: "What do you need to estimate a project?",
+    question: "What do you need to estimate a software project?",
     answer:
       "A short brief is enough to start: your business goals, key features, target users, preferred timeline, budget range, and any existing design or technical assets. We'll turn that into a written scope within 48 hours.",
   },
@@ -106,12 +106,11 @@ export default function FAQ() {
               Questions
             </span>
             <h2 className="mt-5 text-4xl font-bold leading-tight text-[#111827] sm:text-5xl">
-              Frequent Client{" "}
-              <span className="text-gradient-orange">Inquiries</span>
+              Software Development{" "}
+              <span className="text-gradient-orange">FAQ</span>
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-[#667085]">
-              Straight answers about timelines, cost, ownership, and how we
-              collaborate with growing teams.
+              Straight answers about hiring a software development company in Nepal, including timelines, cost, ownership, and international collaboration.
             </p>
 
             {/* Promises */}

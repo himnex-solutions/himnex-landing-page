@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
 import { Star, Quote } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 
@@ -147,7 +148,13 @@ export default function Testimonials() {
               <div className="flex items-center gap-3 pt-2 border-t border-[#E6E9EF]">
                 {/* Avatar */}
                 <div className="w-9 h-9 rounded-full overflow-hidden border border-[#E6E9EF] flex-shrink-0">
-                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                  <Image
+                    src={t.image}
+                    alt={t.name}
+                    width={36}
+                    height={36}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-1.5">

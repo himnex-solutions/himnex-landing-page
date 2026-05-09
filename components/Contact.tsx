@@ -29,7 +29,7 @@ const contactMeta = [
   {
     icon: Briefcase,
     title: "Flexible Engagement",
-    body: "Project-based, retainer, or staff augmentation — your call.",
+    body: "Project-based, retainer, or dedicated Nepal-based development support.",
   },
 ];
 
@@ -184,7 +184,7 @@ export default function Contact() {
                 Get In Touch
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold text-[#111827] leading-tight">
-                Start Your{" "}
+                Hire Software Developers in{" "}
                 <span
                   style={{
                     background: "linear-gradient(135deg, #FF6A00, #ffb347)",
@@ -193,12 +193,11 @@ export default function Contact() {
                     backgroundClip: "text",
                   }}
                 >
-                  Project
+                  Nepal
                 </span>
               </h2>
               <p className="text-[#667085] text-lg leading-relaxed">
-                Tell us about your idea and we&apos;ll get back to you with a
-                tailored plan — no strings attached.
+                Tell us about your website, software, SaaS, mobile app, or API project and we&apos;ll get back to you with a tailored plan - no strings attached.
               </p>
             </motion.div>
 

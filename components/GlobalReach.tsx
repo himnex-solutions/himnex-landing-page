@@ -176,11 +176,11 @@ export default function GlobalReach() {
                 Global Reach
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold text-[#111827] py-2">
-                Global Software,{" "}
-                Built in <span className="text-[#FF6A00]">Nepal</span>
+                Software Development from{" "}
+                <span className="text-[#FF6A00]">Nepal</span> for Global Clients
               </h2>
               <p className="text-[#667085] text-lg max-w-l mx-auto leading-relaxed">
-                Born in the heart of Nepal and built for a global stage, we collaborate with startups and enterprises across the US, UK, Australia, Singapore, and beyond—delivering software solutions that transcend borders.
+                Born in Nepal and built for a global stage, we collaborate with startups, SMEs, and enterprises across Nepal, the US, UK, Australia, Singapore, and beyond - delivering software solutions that cross borders.
               </p>
             </motion.div>
 

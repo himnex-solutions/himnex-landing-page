@@ -4,7 +4,6 @@ import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
-  Calendar,
   CheckCircle2,
   ChevronRight,
   Code2,
@@ -35,8 +34,8 @@ const trustStats = [
 ];
 
 const capabilities = [
-  "Platform engineering",
-  "Secure APIs",
+  "Nepal-based engineering",
+  "Secure APIs and SaaS platforms",
   "Conversion-ready web apps",
 ];
 
@@ -80,11 +79,11 @@ export default function Hero() {
             className="space-y-5"
           >
             <h1 className="max-w-5xl text-4xl font-black leading-[1.03] tracking-tight text-[#111827] sm:text-6xl lg:text-6xl">
-              Custom software
-              <span className="block text-brand-orange">for Ambitious Teams</span>
+              Software development company in Nepal
+              <span className="block text-brand-orange">for ambitious global teams</span>
             </h1>
             <p className="max-w-xl text-base leading-8 text-[#5F6B7A] sm:text-lg">
-              Himnex Solutions works with growing companies to design and build web platforms, systems, and APIs that genuinely help move the business forward and scale with confidence.
+              Himnex Solutions helps Nepali businesses and international clients design, build, and scale custom software, websites, SaaS platforms, mobile apps, and APIs with clear communication from Nepal.
             </p>
           </motion.div>
 
