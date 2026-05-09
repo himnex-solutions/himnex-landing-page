@@ -5,7 +5,7 @@ export const siteName = "Himnex Solutions";
 export const defaultTitle =
   "Software Development Company in Nepal | Himnex Solutions";
 export const defaultDescription =
-  "Himnex Solutions is a software development company in Nepal building custom web apps, SaaS platforms, APIs, mobile apps, and cloud systems for Nepali and international clients.";
+  "Himnex Solutions is a top software development company in Nepal — building custom web apps, SaaS platforms, APIs, mobile apps, and cloud systems for Nepali and international clients.";
 
 export const seoKeywords = [
   "software development company in Nepal",
@@ -21,6 +21,8 @@ export const seoKeywords = [
   "API development Nepal",
   "mobile app development Nepal",
   "cloud DevOps Nepal",
+  "best software company in Nepal",
+  "affordable software development Nepal",
   "Himnex Solutions",
 ];
 
@@ -93,37 +95,43 @@ export function createPageMetadata({
   path?: string;
 } = {}): Metadata {
   const url = new URL(path, siteUrl).toString();
+  const canonicalUrl = `${siteUrl}${path === "/" ? "" : path}`;
 
   return {
     metadataBase: new URL(siteUrl),
     title,
     description,
     keywords: seoKeywords,
-    authors: [{ name: siteName }],
+    authors: [{ name: siteName, url: siteUrl }],
     creator: siteName,
     publisher: siteName,
+    applicationName: siteName,
+    generator: "Next.js",
+    referrer: "origin-when-cross-origin",
     alternates: {
-      canonical: path,
+      canonical: canonicalUrl,
       languages: {
-        "en-US": path,
-        "en-NP": path,
-        "x-default": path,
+        "en-US": `${siteUrl}${path}`,
+        "en-NP": `${siteUrl}${path}`,
+        "ne-NP": `${siteUrl}${path}`,
+        "x-default": `${siteUrl}${path}`,
       },
     },
     openGraph: {
       type: "website",
       locale: "en_US",
-      alternateLocale: ["en_NP"],
+      alternateLocale: ["en_NP", "ne_NP"],
       url,
       title,
       description,
       siteName,
       images: [
         {
-          url: "/images/logo.png",
+          url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "Himnex Solutions software development company in Nepal",
+          alt: "Himnex Solutions — Software Development Company in Nepal",
+          type: "image/png",
         },
       ],
     },
@@ -131,15 +139,19 @@ export function createPageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: ["/images/logo.png"],
+      site: "@himnexsolutions",
+      creator: "@himnexsolutions",
+      images: ["/og-image.png"],
     },
     category: "technology",
     robots: {
       index: true,
       follow: true,
+      nocache: false,
       googleBot: {
         index: true,
         follow: true,
+        noimageindex: false,
         "max-video-preview": -1,
         "max-image-preview": "large",
         "max-snippet": -1,
@@ -147,3 +159,4 @@ export function createPageMetadata({
     },
   };
 }
+

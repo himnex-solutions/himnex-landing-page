@@ -36,7 +36,7 @@ const trustStats = [
 const capabilities = [
   "Nepal-based engineering",
   "Secure APIs and SaaS platforms",
-  "Conversion-ready web apps",
+  "Action-driven web apps",
 ];
 
 const deliveryLanes = [
@@ -69,7 +69,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(116deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.76)_44%,rgba(255,106,0,0.08)_44.2%,rgba(255,106,0,0.02)_64%,rgba(17,24,39,0.05)_64.2%,rgba(255,255,255,0.84)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-28 bg-linear-to-t from-white to-transparent" />
 
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.15fr] lg:gap-14 lg:px-8">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.3fr] lg:gap-10 lg:px-8">
         <div className="max-w-2xl">
           <motion.div
             variants={fadeUp}
@@ -79,11 +79,11 @@ export default function Hero() {
             className="space-y-5"
           >
             <h1 className="max-w-5xl text-4xl font-black leading-[1.03] tracking-tight text-[#111827] sm:text-6xl lg:text-6xl">
-              Software development company in Nepal
-              <span className="block text-brand-orange">for ambitious global teams</span>
+              Nepal&apos;s Software Company
+              <span className="block text-brand-orange">Built for Global Clients</span>
             </h1>
             <p className="max-w-xl text-base leading-8 text-[#5F6B7A] sm:text-lg">
-              Himnex Solutions helps Nepali businesses and international clients design, build, and scale custom software, websites, SaaS platforms, mobile apps, and APIs with clear communication from Nepal.
+              Himnex Solutions builds custom software, websites, SaaS platforms, mobile apps, and APIs for Nepali businesses and international clients — with clear communication from Nepal.
             </p>
           </motion.div>
 
@@ -167,140 +167,153 @@ export default function Hero() {
 
 function DeliveryConsole() {
   return (
-    <div className="relative ml-auto aspect-[1.05/1] w-full max-w-[700px]">
-      <div className="absolute inset-0 rounded-4xl border border-[#111827]/10 bg-white/86 shadow-[0_34px_90px_rgba(15,23,42,0.14)] backdrop-blur-xl" />
-      <div className="absolute inset-3 rounded-3xl border border-[#E6E9EF] bg-[#FCFDFE]" />
+    <div className="relative ml-auto w-full max-w-[780px] rounded-[2rem] border border-[#111827]/10 bg-white/90 shadow-[0_34px_90px_rgba(15,23,42,0.14)] backdrop-blur-xl p-5 flex flex-col gap-4">
+      {/* Inner decorative border */}
+      <div className="pointer-events-none absolute inset-[10px] rounded-[1.6rem] border border-[#E6E9EF]/80" />
 
-      <div className="absolute left-8 right-8 top-8 flex items-center justify-between border-b border-[#E6E9EF] pb-5">
+      {/* ── Header ── */}
+      <div className="flex items-center justify-between border-b border-[#E6E9EF] pb-4 px-1">
         <div>
-          <div className="text-xs font-bold uppercase tracking-[0.2em] text-brand-orange">
+          <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-brand-orange">
             Himnex Delivery OS
           </div>
-          <div className="mt-1 text-2xl font-black tracking-tight text-[#111827]">
+          <div className="mt-0.5 text-xl font-black tracking-tight text-[#111827]">
             Launch command
           </div>
         </div>
-        <div className="flex items-center gap-2 rounded-lg border border-[#BBF7D0] bg-[#F0FDF4] px-3 py-2 text-xs font-bold text-[#15803D]">
-          <CheckCircle2 size={15} />
+        <div className="flex items-center gap-2 rounded-lg border border-[#BBF7D0] bg-[#F0FDF4] px-3 py-1.5 text-xs font-bold text-[#15803D]">
+          <CheckCircle2 size={13} />
           Production-ready
         </div>
       </div>
 
-      <div className="absolute left-8 top-[6.5rem] lg:top-28 w-[43%] space-y-3 z-10">
-        <div className="rounded-xl border border-[#E6E9EF] bg-white p-3.5 shadow-[0_18px_44px_rgba(15,23,42,0.07)]">
-          <div className="mb-3 flex items-center justify-between">
-            <div className="text-sm font-bold text-[#111827]">
-              Delivery velocity
+      {/* ── Middle: two equal columns ── */}
+      <div className="grid grid-cols-2 gap-4">
+
+        {/* Left column: velocity chart + build integrity */}
+        <div className="flex flex-col gap-3">
+
+          {/* Delivery velocity */}
+          <div className="rounded-xl border border-[#E6E9EF] bg-white p-4 shadow-[0_8px_28px_rgba(15,23,42,0.06)]">
+            <div className="mb-3 flex items-center justify-between">
+              <div className="text-sm font-bold text-[#111827]">Delivery velocity</div>
+              <LineChart size={16} className="text-brand-orange" />
             </div>
-            <LineChart size={17} className="text-brand-orange" />
+            <div className="flex h-16 items-end gap-1.5">
+              {[28, 44, 38, 61, 55, 78, 68, 92].map((height, index) => (
+                <motion.div
+                  key={height}
+                  initial={{ height: 0 }}
+                  animate={{ height: `${height}%` }}
+                  transition={{ duration: 0.7, delay: 0.55 + index * 0.06 }}
+                  className="w-full rounded-t-md bg-brand-orange"
+                  style={{ opacity: 0.3 + index * 0.08 }}
+                />
+              ))}
+            </div>
           </div>
-          <div className="flex h-16 items-end gap-2">
-            {[28, 44, 38, 61, 55, 78, 68, 92].map((height, index) => (
-              <motion.div
-                key={height}
-                initial={{ height: 0 }}
-                animate={{ height: `${height}%` }}
-                transition={{ duration: 0.7, delay: 0.55 + index * 0.06 }}
-                className="w-full rounded-t-md bg-brand-orange"
-                style={{ opacity: 0.3 + index * 0.08 }}
+
+          {/* Build integrity */}
+          <div className="flex-1 rounded-xl border border-[#E6E9EF] bg-white p-4 shadow-[0_8px_28px_rgba(15,23,42,0.05)]">
+            <div className="mb-3 flex items-center gap-2 text-sm font-bold text-[#111827]">
+              <ShieldCheck size={16} className="text-[#16A34A]" />
+              Build integrity
+            </div>
+            <div className="space-y-3">
+              {deliveryLanes.map((lane) => (
+                <div key={lane.label}>
+                  <div className="mb-1.5 flex items-center justify-between text-[11px] font-semibold text-[#667085]">
+                    <span>{lane.label}</span>
+                    <span>{lane.width}</span>
+                  </div>
+                  <div className="h-1.5 overflow-hidden rounded-full bg-[#EEF2F6]">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: lane.width }}
+                      transition={{ duration: 0.9, ease: "easeOut", delay: 0.7 }}
+                      className={`h-full rounded-full ${lane.tone}`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right column: architecture panel */}
+        <div className="overflow-hidden rounded-xl border border-[#E6E9EF] bg-[#111827] shadow-[0_28px_70px_rgba(17,24,39,0.22)]">
+          {/* Title bar */}
+          <div className="flex h-10 items-center justify-between border-b border-white/10 px-4">
+            <div className="flex gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-brand-orange" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+            </div>
+            <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/50">
+              architecture
+            </div>
+          </div>
+
+          {/* SVG diagram */}
+          <div className="relative flex-1" style={{ height: "calc(100% - 2.5rem)" }}>
+            <svg
+              className="absolute inset-0 h-full w-full"
+              viewBox="0 0 320 260"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M76 64 C132 64 128 128 160 128 C192 128 188 64 244 64"
+                stroke="rgba(255,255,255,0.18)"
+                strokeWidth="1.5"
               />
-            ))}
-          </div>
-        </div>
+              <path
+                d="M76 194 C128 194 127 132 160 132 C193 132 192 194 244 194"
+                stroke="rgba(255,255,255,0.18)"
+                strokeWidth="1.5"
+              />
+              <path
+                d="M86 76 L234 184"
+                stroke="rgba(255,106,0,0.34)"
+                strokeWidth="1.5"
+                strokeDasharray="6 8"
+              />
+              <path
+                d="M86 184 L234 76"
+                stroke="rgba(255,106,0,0.24)"
+                strokeWidth="1.5"
+                strokeDasharray="6 8"
+              />
+            </svg>
 
-        <div className="rounded-xl border border-[#E6E9EF] bg-white p-3.5 shadow-[0_18px_44px_rgba(15,23,42,0.06)]">
-          <div className="mb-3 flex items-center gap-2 text-sm font-bold text-[#111827]">
-            <ShieldCheck size={17} className="text-[#16A34A]" />
-            Build integrity
-          </div>
-          <div className="space-y-2.5">
-            {deliveryLanes.map((lane) => (
-              <div key={lane.label}>
-                <div className="mb-1 flex items-center justify-between text-[11px] font-semibold text-[#667085]">
-                  <span>{lane.label}</span>
-                  <span>{lane.width}</span>
+            {/* Central pulse */}
+            <motion.div
+              animate={{ scale: [1, 1.08, 1], opacity: [0.72, 1, 0.72] }}
+              transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-brand-orange/50 bg-brand-orange text-[#111827] shadow-[0_0_50px_rgba(255,106,0,0.46)]"
+            >
+              <Zap size={22} fill="currentColor" />
+            </motion.div>
+
+            {/* System nodes */}
+            {systemNodes.map((node) => {
+              const Icon = node.icon;
+              return (
+                <div
+                  key={node.label}
+                  className={`absolute ${node.position} flex min-w-[3.5rem] flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/8 px-2.5 py-2 text-white shadow-[0_16px_36px_rgba(0,0,0,0.2)] backdrop-blur`}
+                >
+                  <Icon size={14} className="text-[#FFB347]" />
+                  <span className="text-[10px] font-bold">{node.label}</span>
                 </div>
-                <div className="h-1.5 overflow-hidden rounded-full bg-[#EEF2F6]">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: lane.width }}
-                    transition={{ duration: 0.9, ease: "easeOut", delay: 0.7 }}
-                    className={`h-full rounded-full ${lane.tone}`}
-                  />
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
 
-      <div className="absolute right-8 top-[6.5rem] lg:top-28 h-[18.7rem] w-[45%] overflow-hidden rounded-xl border border-[#E6E9EF] bg-[#111827] shadow-[0_28px_70px_rgba(17,24,39,0.22)]">
-        <div className="flex h-11 items-center justify-between border-b border-white/10 px-4">
-          <div className="flex gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-brand-orange" />
-            <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
-            <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
-          </div>
-          <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/50">
-            architecture
-          </div>
-        </div>
-
-        <div className="relative h-[calc(100%-2.75rem)]">
-          <svg
-            className="absolute inset-0 h-full w-full"
-            viewBox="0 0 320 260"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M76 64 C132 64 128 128 160 128 C192 128 188 64 244 64"
-              stroke="rgba(255,255,255,0.18)"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M76 194 C128 194 127 132 160 132 C193 132 192 194 244 194"
-              stroke="rgba(255,255,255,0.18)"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M86 76 L234 184"
-              stroke="rgba(255,106,0,0.34)"
-              strokeWidth="1.5"
-              strokeDasharray="6 8"
-            />
-            <path
-              d="M86 184 L234 76"
-              stroke="rgba(255,106,0,0.24)"
-              strokeWidth="1.5"
-              strokeDasharray="6 8"
-            />
-          </svg>
-
-          <motion.div
-            animate={{ scale: [1, 1.08, 1], opacity: [0.72, 1, 0.72] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-brand-orange/50 bg-brand-orange text-[#111827] shadow-[0_0_50px_rgba(255,106,0,0.46)]"
-          >
-            <Zap size={30} fill="currentColor" />
-          </motion.div>
-
-          {systemNodes.map((node) => {
-            const Icon = node.icon;
-            return (
-              <div
-                key={node.label}
-                className={`absolute ${node.position} flex min-w-20 flex-col items-center gap-2 rounded-xl border border-white/10 bg-white/8 px-3 py-3 text-white shadow-[0_16px_36px_rgba(0,0,0,0.2)] backdrop-blur`}
-              >
-                <Icon size={18} className="text-[#FFB347]" />
-                <span className="text-xs font-bold">{node.label}</span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="absolute bottom-8 left-8 right-8 grid grid-cols-3 gap-3">
+      {/* ── Bottom metrics ── */}
+      <div className="grid grid-cols-3 gap-3">
         {[
           { label: "Security", value: "A-grade", icon: LockKeyhole },
           { label: "Latency", value: "Fast", icon: Zap },
@@ -310,15 +323,13 @@ function DeliveryConsole() {
           return (
             <div
               key={metric.label}
-              className="rounded-xl border border-[#E6E9EF] bg-white p-4 shadow-[0_14px_34px_rgba(15,23,42,0.06)]"
+              className="rounded-xl border border-[#E6E9EF] bg-white p-3.5 shadow-[0_8px_24px_rgba(15,23,42,0.05)]"
             >
-              <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[#FFF4EC] text-brand-orange">
-                <Icon size={17} />
+              <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#FFF4EC] text-brand-orange">
+                <Icon size={15} />
               </div>
-              <div className="text-lg font-black text-[#111827]">
-                {metric.value}
-              </div>
-              <div className="text-xs font-semibold uppercase tracking-[0.13em] text-[#667085]">
+              <div className="text-base font-black text-[#111827]">{metric.value}</div>
+              <div className="text-[10px] font-semibold uppercase tracking-[0.13em] text-[#667085]">
                 {metric.label}
               </div>
             </div>
@@ -328,3 +339,4 @@ function DeliveryConsole() {
     </div>
   );
 }
+

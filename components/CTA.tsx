@@ -33,7 +33,7 @@ export default function CTA() {
           {/* Headline */}
           <div className="space-y-4">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111827] leading-tight">
-              Let&apos;s Build Your
+              Start Your Project with
               <br />
               <span
                 style={{
@@ -43,7 +43,7 @@ export default function CTA() {
                   backgroundClip: "text",
                 }}
               >
-                Next Project
+                Nepal&apos;s Best Dev Team
               </span>
             </h2>
             <p className="text-lg text-[#667085] max-w-xl mx-auto leading-relaxed">

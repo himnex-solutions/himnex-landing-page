@@ -101,7 +101,7 @@ export default function Testimonials() {
             Client Stories
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-[#111827]">
-            What Our Clients Say
+            Clients Who Hired Himnex from Nepal
           </h2>
           <p className="text-[#667085] text-lg max-w-xl mx-auto leading-relaxed">
             Don&apos;t take our word for it — hear from the businesses we&apos;ve helped scale.

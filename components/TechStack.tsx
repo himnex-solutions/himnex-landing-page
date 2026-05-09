@@ -200,7 +200,7 @@ export default function TechStack() {
             Tech Stack
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-[#111827] mb-4">
-            Simple. Smart. Technology.
+              Modern Tech Stack We Build With
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[#667085]">
             We select proven tech that supports fast launches, easy maintenance, and long-term growth.

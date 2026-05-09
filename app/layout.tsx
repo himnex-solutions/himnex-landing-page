@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -13,13 +13,23 @@ const sora = Sora({
 
 export const metadata: Metadata = createPageMetadata();
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#111827" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-NP">
       <body className={`${sora.className} ${sora.variable} antialiased bg-white text-[#111827]`}>
         <StructuredData />
         {children}

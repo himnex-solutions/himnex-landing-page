@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
             Our Advantage
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-[#111827]">
-            Why Hire{" "}
+            Why Choose a{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #FF6A00, #ffb347)",
@@ -81,7 +81,7 @@ export default function WhyChooseUs() {
                 backgroundClip: "text",
               }}
             >
-              Himnex from Nepal?
+              Nepal Software Company?
             </span>
           </h2>
           <p className="text-[#667085] text-lg max-w-xl mx-auto leading-relaxed">
