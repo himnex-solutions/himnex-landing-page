@@ -127,7 +127,7 @@ export function createPageMetadata({
       siteName,
       images: [
         {
-          url: "/og-image.png",
+          url: "/images/og_banner.png",
           width: 1200,
           height: 630,
           alt: "Himnex Solutions — Software Development Company in Nepal",
@@ -141,7 +141,7 @@ export function createPageMetadata({
       description,
       site: "@himnexsolutions",
       creator: "@himnexsolutions",
-      images: ["/og-image.png"],
+      images: ["/images/og_banner.png"],
     },
     category: "technology",
     robots: {

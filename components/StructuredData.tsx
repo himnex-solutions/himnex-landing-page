@@ -51,7 +51,7 @@ export default function StructuredData() {
         "@id": `${siteUrl}/#business`,
         name: siteName,
         url: siteUrl,
-        image: `${siteUrl}/images/logo.png`,
+        image: `${siteUrl}/images/og_banner.png`,
         logo: `${siteUrl}/images/logo.png`,
         description: defaultDescription,
         telephone: "+9779869100969",
