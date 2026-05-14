@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const siteUrl = "https://himnexsolutions.com";
+export const siteUrl = "https://www.himnexsolutions.com";
 export const siteName = "Himnex Solutions";
 export const defaultTitle =
   "Software Development Company in Nepal | Himnex Solutions";
@@ -111,10 +111,10 @@ export function createPageMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        "en-US": `${siteUrl}${path}`,
-        "en-NP": `${siteUrl}${path}`,
-        "ne-NP": `${siteUrl}${path}`,
-        "x-default": `${siteUrl}${path}`,
+        "en-US": canonicalUrl,
+        "en-NP": canonicalUrl,
+        "ne-NP": canonicalUrl,
+        "x-default": canonicalUrl,
       },
     },
     openGraph: {
